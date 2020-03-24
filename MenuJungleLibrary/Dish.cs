@@ -9,14 +9,14 @@ namespace MenuJungleLibrary
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
-        public int DishID { get; set; }
+        //public int DishID { get; set; }
 
-        public Dish(string aName, string aDescription, double aPrice, int aDishid)
+        public Dish(string aName, string aDescription, double aPrice)
         {
             this.Name = aName;
             this.Description = aDescription;
             this.Price = aPrice;
-            this.DishID = aDishid;
+            //this.DishID = aDishid;
         }
     }
 }

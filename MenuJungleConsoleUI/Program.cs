@@ -8,27 +8,23 @@ namespace MenuJungleConsoleUI
     {
         static void Main(string[] args)
         {
-        List<Dish> dishes = new List<Dish>();
-        List<Menu> menus = new List<Menu>();
+            List<Dish> dishes = new List<Dish>();
 
-        dishes.Add(new Dish("Kanakeitto", "Kanaa ja keittoa", 12.50, 1));
-        menus.Add(new Menu("Salaatti", "Pyttipannu", "jäätelö", "ranskalaiset"));
-            //Testi annos ja testi ruokalista
-        }
-        public Dish CreateDish()
-        {
-            Console.WriteLine("Syötä ruuan nimi:");
-            string aName = Console.ReadLine();
-            Console.WriteLine("Syötä ruuan sisältö:");
-            string aDescription = Console.ReadLine();
-            Console.WriteLine("Syötä ruuan hinta:");
-            double aPrice = Convert.ToDouble(Console.ReadLine());
-            Console.WriteLine("Syötä ruuan listanumero:");
-            int aDishid = Convert.ToInt32(Console.ReadLine());
+            dishes.Add(new Dish("Kanakeitto", "Kanaa ja keittoa", 12.50));
+            dishes.Add(new Dish("Kaalilaatikko", "Kaalta ja jauhelihaa", 11.00));
+            dishes.Add(new Dish("Jauhelihakeitto", "jauheliha ja kasvikset", 10.00));
 
-            Dish dishes = new Dish(aName, aDescription, aPrice, aDishid);
-
-            return dishes;
+            Menu menu = new Menu();
+            menu.dishes.AddRange(dishes);
+            
+            foreach (var item in menu.dishes)
+            {
+                Console.WriteLine(item.Name);              
+                Console.WriteLine(item.Description);
+                Console.WriteLine(item.Price);
+                Console.WriteLine();
+            }
+            //Testi annoksia ruokalistalla
         }
     }
 }
