@@ -31,6 +31,8 @@ namespace MenuJungleLibrary
             Console.Clear();
             Console.WriteLine("1. Lisää annos:");
             Console.WriteLine("2. Näytä annos lista:");
+            Console.WriteLine("3. Lisää annos ruokalistaan:");
+            Console.WriteLine("4. Näytä ruokalista:");
             Console.WriteLine("0. Exit");
             int selected = int.Parse(Console.ReadLine());
             Console.Clear();
@@ -41,6 +43,12 @@ namespace MenuJungleLibrary
                     break;
                 case 2:
                     dataHandler.PrintDishList();
+                    break;
+                case 3:
+                    dataHandler.AddDishToMenu();
+                    break;
+                case 4:
+                    dataHandler.ShowMenu();
                     break;
                 case 0:
                     return false;

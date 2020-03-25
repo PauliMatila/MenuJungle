@@ -9,6 +9,7 @@ namespace MenuJungleConsoleUI
         static void Main(string[] args)
         {
             DataHandler dh = new DataHandler();
+            dh.AddTestDishes();
             MainMenu mainMenu = new MainMenu(dh);
             mainMenu.OpenMainMenu();
             //List<Dish> dishes = new List<Dish>();
