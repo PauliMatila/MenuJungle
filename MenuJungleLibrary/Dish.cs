@@ -13,10 +13,10 @@ namespace MenuJungleLibrary
 
         public Dish(string aName, string aDescription, double aPrice)
         {
-            this.Name = aName;
-            this.Description = aDescription;
-            this.Price = aPrice;
-            //this.DishID = aDishid;
+            Name = aName;
+            Description = aDescription;
+            Price = aPrice;
+            //DishID = aDishid;
         }
     }
 }

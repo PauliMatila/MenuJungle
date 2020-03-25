@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MenuJungleLibrary
 {
-    class MainMenu
+    public class MainMenu
     {
         public MainMenu()
         {
@@ -31,6 +31,7 @@ namespace MenuJungleLibrary
             Console.Clear();
             Console.WriteLine("1. Lisää annos:");
             Console.WriteLine("2. Näytä annos lista:");
+            Console.WriteLine("0. Exit");
             int selected = int.Parse(Console.ReadLine());
             Console.Clear();
             switch (selected)
@@ -41,6 +42,8 @@ namespace MenuJungleLibrary
                 case 2:
                     dataHandler.PrintDishList();
                     break;
+                case 0:
+                    return false;
                 default:
                     Console.Clear();
                     return true;
