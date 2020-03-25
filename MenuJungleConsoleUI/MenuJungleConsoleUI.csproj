@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IKVM" Version="8.1.5717" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\MenuJungleLibrary\MenuJungleLibrary.csproj" />
   </ItemGroup>
 
