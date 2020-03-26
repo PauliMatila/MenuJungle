@@ -81,7 +81,7 @@ namespace MenuJungleLibrary
         public Dish SelectDishFromList()
         {
             PrintDishList();
-            Console.WriteLine("Syötä valittavan annoksen numero:");
+            Console.WriteLine("\nSyötä valittavan annoksen numero:");
             int selected = int.Parse(Console.ReadLine());
             return dishes[selected - 1];
         }
@@ -89,19 +89,15 @@ namespace MenuJungleLibrary
         public void AddAppetizersToMenu()
         {
             PrintDishList();
-            Console.WriteLine("Syötä lisättävän alkuruoan numero:");
+            Console.WriteLine("\nSyötä lisättävän alkuruoan numero:");
             int selected = int.Parse(Console.ReadLine());
-            string dishName = dishes[selected - 1].Name;
-            string descriptions = dishes[selected - 1].Description;
-            double pricez = dishes[selected - 1].Price;
-            //this.menu.Appetizers.Add(dishName, descriptions, pricez);
-            //this.menu.Appetizers.Add(dishes[selected - 1].Name, dishes[selected - 1].Description, dishes[selected - 1].Price);
+            this.menu.Appetizers.Add(dishes[selected - 1]);
         }
 
         public void AddMainDishesToMenu()
         {
             PrintDishList();
-            Console.WriteLine("Syötä lisättävän pääruoan numero:");
+            Console.WriteLine("\nSyötä lisättävän pääruoan numero:");
             int selected = int.Parse(Console.ReadLine());
             this.menu.MainDishes.Add(dishes[selected - 1]);
         }
@@ -109,47 +105,53 @@ namespace MenuJungleLibrary
         public void AddDessertsToMenu()
         {
             PrintDishList();
-            Console.WriteLine("Syötä lisättävän jälkiruoan numero:");
+            Console.WriteLine("\nSyötä lisättävän jälkiruoan numero:");
             int selected = int.Parse(Console.ReadLine());
             this.menu.Desserts.Add(dishes[selected - 1]);
         }
 
         public void ShowMenu()
         {
-            Console.WriteLine("Alkupalat:");
+            Console.WriteLine("ALKUPALAT:");
             if (menu.Appetizers.Count == 0)
             {
-                Console.WriteLine("Ei alkupaloja");
+                Console.WriteLine("\nEi alkupaloja");
             }
             else
             {
                 for (int i = 0; i < menu.Appetizers.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {menu.Appetizers[i]}");
+                    Console.WriteLine($"\n{menu.Appetizers[i].Name.ToUpper()}");
+                    Console.WriteLine($"sisältö: {menu.Appetizers[i].Description}");
+                    Console.WriteLine($"hinta: {menu.Appetizers[i].Price.ToString("0.00")}");
                 }
             }
-            Console.WriteLine("Pääruoka:");
+            Console.WriteLine("\nPÄÄRUOKA:");
             if (menu.MainDishes.Count == 0)
             {
-                Console.WriteLine("Ei pääruokia");
+                Console.WriteLine("\nEi pääruokia");
             }
             else
             {
                 for (int i = 0; i < menu.MainDishes.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {menu.MainDishes[i]}");
+                    Console.WriteLine($"\n{menu.MainDishes[i].Name.ToUpper()}");
+                    Console.WriteLine($"sisältö: {menu.MainDishes[i].Description}");
+                    Console.WriteLine($"hinta: {menu.MainDishes[i].Price.ToString("0.00")}");
                 }
             }
-            Console.WriteLine("Jälkiruoka:");
+            Console.WriteLine("\nJÄLKIRUOKA:");
             if (menu.Desserts.Count == 0)
             {
-                Console.WriteLine("Ei jälkiruokia");
+                Console.WriteLine("\nEi jälkiruokia");
             }
             else
             {
                 for (int i = 0; i < menu.Desserts.Count; i++)
                 {
-                    Console.WriteLine($"{i + 1}. {menu.Desserts[i]}");
+                    Console.WriteLine($"\n{menu.Desserts[i].Name.ToUpper()}");
+                    Console.WriteLine($"sisältö: {menu.Desserts[i].Description}");
+                    Console.WriteLine($"hinta: {menu.Desserts[i].Price.ToString("0.00")}");
                 }
             }
         }
